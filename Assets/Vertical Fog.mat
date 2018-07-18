@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Vertical Fog
+  m_Shader: {fileID: 4800000, guid: c500af244dc767d46838bab09b8698ab, type: 3}
+  m_ShaderKeywords: _DISTORTCOOKIE_ON _ROTATION_ON _USECOOKIE_ON _USEMAINDISTORT_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Cookie:
+        m_Texture: {fileID: 2800000, guid: 9ebde22c63c577b47924be51a03f7914, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DistortTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 441bd511fabb2424fa084b415779c4ab, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Alpha: 0.31
+    - _AlphaThreshold: 0.01
+    - _CookieStrength: 0.863
+    - _DistortCookie: 1
+    - _DistortCookieAmount: 0.505
+    - _DistortRotationSpeed: 0.03
+    - _DistortSpeed: 0.23
+    - _FogOrder: 0
+    - _IntersectionThresholdMax: 0.36
+    - _Invert: 0
+    - _Magnitude: 2.73
+    - _MainDistort: 0
+    - _MainDistortAmount: 0.829
+    - _Offset: 9
+    - _OriginX: -0.01
+    - _OriginY: 0
+    - _Period: 2.08
+    - _Rotation: 1
+    - _RotationSpeed: 0.02
+    - _SpeedX: 0.038
+    - _SpeedY: 0
+    - _TestDistortion: 0
+    - _Translate: 0
+    - _UseCookie: 1
+    - _UseMainDistort: 1
+    m_Colors:
+    - _Color: {r: 0.70325005, g: 0.85294116, b: 0.3637543, a: 1}
