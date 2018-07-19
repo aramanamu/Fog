@@ -12,7 +12,7 @@ by Harry Alisavakis. It may require a directional light in the scene.
 This shader was written with the intent of just using it on a quad and will not work well with very different geometry.
 
 ## Texture Features
-###Texture, Ivert, Tint Color, Alpha, Fog Transition
+### Texture, Ivert, Tint Color, Alpha, Fog Transition
 The shader can be used without textures to achieve the result visible in the above tutorial.
 A default white texture is used as the main texture if none are assigned. This is tinted with the chosen color.
 
@@ -21,14 +21,14 @@ An Alpha control was added, which simply reduces the alpha based on the darkest 
 Fog Transition corresponds to intersectionThresholdMax; from experimenting with values I set this on a slider
 to be in a limited range. This controls how "deep" the blend is between the quad and the objects occluded by it.
 
-###Use Cookie toggle, Cookie, Cookie Strength
+### Use Cookie toggle, Cookie, Cookie Strength
 A "cookie" texture slot was added and is simply multiplied onto the main texture. Tiling and Offset are not available
 on this texture as it uses the same UV as the main texture. If using this feature, make sure wrapmode is set to
 clamp in texture import settings. Otherwise, the texture will tile and you will see it in the corners if there is
 a rotation applied.(Likewise if using a non-tiling main texture).
 
 ## Transform Features
-###Rotation toggle, RotationSpeed, Origin X, Origin Y
+### Rotation toggle, RotationSpeed, Origin X, Origin Y
 Checking the Rotation toggle allows rotation of the textures. Since the cookie texture is on the same UV as the main
 texture, it will always rotate with it. The origin of the rotation can be moved using Origin X and Origin Y. This can
 be used to position the texture/cookie relative to the quad. If not using the cookie and using a tileable texture,
@@ -43,26 +43,26 @@ separate speed controls so that the distorion can rotate relative to the main vi
 
 This part of the shader is based on the "Animated materials: a water shader" paragraph and code snippet from
 [this article](https://www.alanzucconi.com/2015/07/01/vertex-and-fragment-shaders-in-unity3d/) by Alan Zucconi.
-###Texture
+### Texture
 A dedicated distortion texture can be added. It will also default to white.
 
-###Use Main Texture toggle
+### Use Main Texture toggle
 Since this was designed around the included noise texture(s), I added the option to use the main texture as the
 distortion texture. This will override the assigned texture.
 
-###Use Cookie toggle, Amount
+### Use Cookie toggle, Amount
 Using the cookie in the distortion, again that's just a multiply operation so it has the effect of reducing the
 amount of distortion in the dark parts of the cookie image; white being unaffected.
 
-###Add Main Texture Distortion toggle, Amount
+### Add Main Texture Distortion toggle, Amount
 Add Main texture distortion does what it says; uses the main texture to add more variation to the distortion.
 
-###Show Distortion Texture toggle
+### Show Distortion Texture toggle
 The show distortion texture toggle was mostly a debugging feature but I have left it in. It just allows you to check
 what the distortion texture currently looks like, rotation and translation. Add main texture distortion is not visible
 here as it is not applied to the texture directly, but to the UV coords via the sine function.
 
-###Speed, Magnitude, Period, Period Offset
+### Speed, Magnitude, Period, Period Offset
 Speed; how quickly the waves move/oscillate.
 Magnitude; Amplitude.
 Period; Wavelength.
@@ -74,26 +74,26 @@ TL;DR How the distortion works is, a 2D sine function is used to distort the UV 
 use. To any given position on that UV, we also add the value of the distortion texture. This just adds some variation
 so that it is not perfectly smooth sine waves everywhere. 
 
-##Distortion Transforms
-###Rotation Speed
+## Distortion Transforms
+### Rotation Speed
 Rotation speed for the distortion.
 
-###Translation toggle, X Speed, Y Speed
+### Translation toggle, X Speed, Y Speed
 The toggle enables translation of the textures for a drifting motion. Currently, the shader does not allow translating
 the distortion relative to the main texture.
 
-###Apply Fog Before Main Texture
+### Apply Fog Before Main Texture
 The shader supports using unity's default fog. This toggle lets you decide if the fog is applied to the output before
 or after the main texture. Possibly useless.
 
-##Limitations, Future Plans
+## Limitations, Future Plans
 Translating the distortion relative to the main texture.
 Adding a sine function option to the translation X and Y Speed so you could make elipses.
 Allowing translation and rotation of distortion and main texture relative to the cookie texture.
 The cookie is very limited. Ideally I would like it on its own UV so I could move the other textures relative to it.
 I would need to sacrifice unity fog to free up a set of UV coordinates, or build this in as a toggle option.
 
-##SceneViewCamera.cs
+## SceneViewCamera.cs
 I included this little exercise, posted as a question on reddit. The goal was to make camera controls similar to
 how the scene view works: rightclick rotates and enables wasd movement, middlemouse moves on a plane perpendicular
 to the forward transform, Alt+leftclick rotates around the selected object's origin.
