@@ -278,7 +278,7 @@
 				
 				if(_UseCookie == 1.0)
 				{
-					fixed4 Cookie = tex2D(_Cookie, i.uv2); //tex2Dproj(_Cookie, i.scrPos);		//	Use the cookie texture with i.uv, so will distort and rotate with the main texture. ***Toggle for static using i.uv3***
+					fixed4 Cookie = tex2D(_Cookie, i.uv); //tex2Dproj(_Cookie, i.scrPos);		//	Use the cookie texture with i.uv, so will distort and rotate with the main texture. ***Toggle for static using i.uv3***
 					
 					MainTex.rgb *= saturate(Cookie + (1.0 - _CookieStrength));	//	In order to make CookieStrength = 0 fully white, I need to add to the black parts. When it's == 1,
 																				//	zero is added so the cookie texture is unaffected. Add to every fragment while clamping at 1.0.

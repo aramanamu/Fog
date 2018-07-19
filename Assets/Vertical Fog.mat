@@ -31,25 +31,25 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Alpha: 0.31
+    - _Alpha: 0.43
     - _AlphaThreshold: 0.01
     - _CookieStrength: 0.863
     - _DistortCookie: 1
     - _DistortCookieAmount: 0.505
-    - _DistortRotationSpeed: 0.03
-    - _DistortSpeed: 0.23
+    - _DistortRotationSpeed: 0.02
+    - _DistortSpeed: 0.08
     - _FogOrder: 0
-    - _IntersectionThresholdMax: 0.36
+    - _IntersectionThresholdMax: 0.59
     - _Invert: 0
-    - _Magnitude: 2.73
+    - _Magnitude: 2.32
     - _MainDistort: 0
-    - _MainDistortAmount: 0.829
-    - _Offset: 9
-    - _OriginX: -0.01
+    - _MainDistortAmount: 0.83
+    - _Offset: 7.2
+    - _OriginX: 0
     - _OriginY: 0
-    - _Period: 2.08
+    - _Period: 1.54
     - _Rotation: 1
-    - _RotationSpeed: 0.02
+    - _RotationSpeed: 0.01
     - _SpeedX: 0.038
     - _SpeedY: 0
     - _TestDistortion: 0
