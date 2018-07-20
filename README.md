@@ -6,10 +6,11 @@
 ### Location: Assets/Vertical_Fog_Distortion.shader
 
 This is a demo project for a basic unity shader that fades/blends vertically based on the camera depth texture.
-This part of the shader is based on [this tutorial](http://halisavakis.com/my-take-on-shaders-vertical-fog/)
+It also uses sine wave and texture based distortion.
+The vertical fog part of the shader is based on [this tutorial](http://halisavakis.com/my-take-on-shaders-vertical-fog/)
 by Harry Alisavakis. It may require a directional light in the scene.
 
-This shader was written with the intent of just using it on a quad and will not work well with very different geometry.
+This shader was written with the intent of just using it on a quad.
 
 ## Texture Features
 ### Texture, Ivert, Tint Color, Alpha, Fog Transition
@@ -17,8 +18,9 @@ The shader can be used without textures to achieve the result visible in the abo
 A default white texture is used as the main texture if none are assigned. This is tinted with the chosen color.
 
 An Alpha control was added, which simply reduces the alpha based on the darkest parts of the image first.
+This allows more control vs. just using the alpha of the tint color.
 
-Fog Transition corresponds to intersectionThresholdMax; from experimenting with values I set this on a slider
+Fog Transition corresponds to intersectionThresholdMax in the tutorial; from experimenting with values I set this on a slider
 to be in a limited range. This controls how "deep" the blend is between the quad and the objects occluded by it.
 
 ### Use Cookie toggle, Cookie, Cookie Strength
@@ -37,7 +39,9 @@ editing the Range in the shader properties. Of course, you can always use a tile
 more efficient to bake that into a single texture and just use the main texture slot.
 
 This toggle also allows the distortion texture to be rotated. Since this is on a separate UV, I have assigned
-separate speed controls so that the distorion can rotate relative to the main visible image and either can be static.
+separate speed controls so that the distortion can rotate relative to the main visible image and either can be static.
+For best results, for a semi-realistic-looking fog, there should be a small difference in rotation between the
+main texture and the distortion texture, especially if using noise as the main texture and distortion texture.
 
 ## Distortion Features
 
@@ -64,22 +68,26 @@ here as it is not applied to the texture directly, but to the UV coords via the 
 
 ### Speed, Magnitude, Period, Period Offset
 Speed; how quickly the waves move/oscillate.
+
 Magnitude; Amplitude.
+
 Period; Wavelength.
+
 Period Offset; sin(Time) is used as the main animating input. Period offset is added to this so instead of the
 function going positive to negative, it will vary relative to Period Offset. The effect is a standing wave-like
-pattern through the shades of grey in the image. It is a similar effect to lowering the period but not exactly
-the same.
+pattern. It is a similar effect to lowering the period but not exactly the same. More like altering the period
+and magnitude simultaneously? I think of it like a fine tuning control.
+
 TL;DR How the distortion works is, a 2D sine function is used to distort the UV that the main texture will
-use. To any given position on that UV, we also add the value of the distortion texture. This just adds some variation
-so that it is not perfectly smooth sine waves everywhere. 
+use. To any given position on that UV, we also add the value of the distortion texture. This adds variation
+so that it is not perfect, smooth, identical sine waves everywhere. 
 
 ## Distortion Transforms
 ### Rotation Speed
 Rotation speed for the distortion.
 
 ### Translation toggle, X Speed, Y Speed
-The toggle enables translation of the textures for a drifting motion. Currently, the shader does not allow translating
+The toggle enables translation of the texture. Currently, the shader does not allow translating
 the distortion relative to the main texture.
 
 ### Apply Fog Before Main Texture
@@ -103,7 +111,7 @@ Having no selection mechanic I opted to use a raycast along tranform.forward; if
 world origin. I found this not so bad, might actually be useful in a game since you can aim with
 rightclick and then rotate around that point with z+leftclick. The ray's range is 50 so that should be adjusted
 to the scene (not currently available in editor). I included a modifier to the speed so it slows down when close up.
-This is also hardcoded to distance / 50 currently.
+This is also hardcoded to distance / 50, currently.
 
 The Altclick has a bug in that if you move the mouse fast, the camera travels away from the target. This is because
 I'm translating in a straight line each frame so it zig-zags away. Possible fix: save the initial distance and move
