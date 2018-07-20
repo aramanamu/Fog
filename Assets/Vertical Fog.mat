@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Vertical Fog
   m_Shader: {fileID: 4800000, guid: c500af244dc767d46838bab09b8698ab, type: 3}
-  m_ShaderKeywords: _DISTORTCOOKIE_ON _ROTATION_ON _USECOOKIE_ON _USEMAINDISTORT_ON
+  m_ShaderKeywords: _ROTATION_ON _USECOOKIE_ON _USEMAINDISTORT_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -31,30 +31,29 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Alpha: 0.43
-    - _AlphaThreshold: 0.01
-    - _CookieStrength: 0.863
-    - _DistortCookie: 1
-    - _DistortCookieAmount: 0.505
-    - _DistortRotationSpeed: 0.02
-    - _DistortSpeed: 0.08
+    - _Alpha: 0.45
+    - _CookieStrength: 0.849
+    - _DistortCookie: 0
+    - _DistortCookieAmount: 1
+    - _DistortRotationSpeed: 0.06
+    - _DistortSpeed: 0.14
     - _FogOrder: 0
-    - _IntersectionThresholdMax: 0.59
+    - _IntersectionThresholdMax: 0.44
     - _Invert: 0
-    - _Magnitude: 2.32
+    - _Magnitude: 1.83
     - _MainDistort: 0
-    - _MainDistortAmount: 0.83
-    - _Offset: 7.2
+    - _MainDistortAmount: 0.685
+    - _Offset: 5.83
     - _OriginX: 0
     - _OriginY: 0
-    - _Period: 1.54
+    - _Period: 1.67
     - _Rotation: 1
-    - _RotationSpeed: 0.01
-    - _SpeedX: 0.038
-    - _SpeedY: 0
+    - _RotationSpeed: 0.03
+    - _SpeedX: 0.049
+    - _SpeedY: 0.07
     - _TestDistortion: 0
     - _Translate: 0
     - _UseCookie: 1
     - _UseMainDistort: 1
     m_Colors:
-    - _Color: {r: 0.70325005, g: 0.85294116, b: 0.3637543, a: 1}
+    - _Color: {r: 0.60272944, g: 0.9705882, b: 0.24978374, a: 1}
